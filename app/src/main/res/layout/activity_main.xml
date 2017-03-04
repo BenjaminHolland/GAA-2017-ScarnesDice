@@ -17,13 +17,16 @@
         android:layout_width="match_parent"
         android:useDefaultMargins="false"
         android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true">
+        android:layout_alignParentStart="true"
+        android:gravity="center_horizontal">
 
         <LinearLayout
             android:orientation="vertical"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/layoutStatusLabel">
+            android:id="@+id/layoutStatusLabel"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp">
 
             <TextView
                 android:text="Status"
@@ -39,7 +42,8 @@
             android:layout_height="wrap_content"
             android:id="@+id/layoutPlayerScore"
             android:layout_toRightOf="@+id/layoutStatusLabel"
-       >
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp">
 
             <TextView
                 android:text="Your Score"
@@ -65,7 +69,8 @@
             android:id="@+id/layoutCompScore"
             android:layout_alignParentStart="false"
             android:layout_toRightOf="@+id/layoutPlayerScore"
-            >
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp">
 
             <TextView
                 android:text="AI Score"
@@ -89,7 +94,8 @@
         android:layout_height="wrap_content"
         app:srcCompat="@drawable/dice1"
         android:id="@+id/imgDie"
-        android:layout_below="@+id/layoutStatus" />
+        android:layout_below="@+id/layoutStatus"
+        android:layout_centerHorizontal="true" />
 
     <LinearLayout
         android:orientation="horizontal"
