@@ -60,6 +60,7 @@ public class ScarnesGame {
     private void handleReset(){
         human.setScore(0);
         ai.setScore(0);
+        appContext.updateScores(0,0);
         if(turn!=TurnSpec.Human){
             transitionToNextPlayer();
         }
