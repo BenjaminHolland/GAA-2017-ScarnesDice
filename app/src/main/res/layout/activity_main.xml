@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/layoutMain"
@@ -9,91 +9,95 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    android:columnCount="3"
-    android:rowCount="3"
     tools:context="csumb2017.holland.ben.gaa_2017_scarnesdice.MainActivity">
 
-    <GridLayout
+    <RelativeLayout
         android:layout_height="wrap_content"
         android:id="@+id/layoutStatus"
-        android:columnCount="3"
-        android:rowCount="2"
-        android:layout_column="0"
-        android:layout_columnSpan="3"
-        android:layout_row="0"
-        android:layout_rowSpan="1"
         android:layout_width="match_parent"
-        android:useDefaultMargins="false">
+        android:useDefaultMargins="false"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true">
 
-        <TextView
-            android:text="Status"
+        <LinearLayout
+            android:orientation="vertical"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/lblStatusText"
-            android:layout_row="0"
-            android:layout_rowSpan="2"
-            android:layout_column="0"
-            android:layout_columnSpan="1"
-             />
+            android:id="@+id/layoutStatusLabel">
 
-        <TextView
-            android:text="Your Score"
-            android:layout_row="0"
-            android:layout_rowSpan="1"
-            android:layout_column="1"
+            <TextView
+                android:text="Status"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/lblStatusText"
+                 />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/lblPlayerScoreText"
-             />
+            android:id="@+id/layoutPlayerScore"
+            android:layout_toRightOf="@+id/layoutStatusLabel"
+       >
 
-        <TextView
-            android:text="AI Score"
+            <TextView
+                android:text="Your Score"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/lblPlayerScoreText"
+                 />
+
+            <TextView
+                android:text="0"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/lblPlayerScore"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/lblCompScoreText"
-            />
+            android:layout_alignParentTop="false"
+            android:id="@+id/layoutCompScore"
+            android:layout_alignParentStart="false"
+            android:layout_toRightOf="@+id/layoutPlayerScore"
+            >
 
-        <TextView
-            android:text="0"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/lblPlayerScore"
-            android:layout_row="1"
-            android:layout_rowSpan="1"
-            android:layout_column="1"
-            android:layout_columnSpan="1" />
+            <TextView
+                android:text="AI Score"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/lblCompScoreText"
+                />
 
-        <TextView
-            android:text="0"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/lblCompScore"
-            android:layout_column="2"
-            android:layout_columnSpan="1"
-            android:layout_row="1"
-            android:layout_rowSpan="1" />
+            <TextView
+                android:text="0"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/lblCompScore"
+                 />
+        </LinearLayout>
 
-    </GridLayout>
+    </RelativeLayout>
 
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:srcCompat="@drawable/dice1"
         android:id="@+id/imgDie"
-        android:layout_column="1"
-        android:layout_columnSpan="1"
-        android:layout_row="1"
-        android:layout_rowSpan="1" />
+        android:layout_below="@+id/layoutStatus" />
 
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_row="2"
-        android:layout_rowSpan="1"
-        android:layout_column="0"
-        android:layout_columnSpan="3"
-        android:id="@+id/layoutButtons">
+
+        android:id="@+id/layoutButtons"
+        android:layout_below="@+id/imgDie">
 
         <Button
             android:text="Roll"
@@ -117,4 +121,4 @@
             android:layout_weight="1" />
     </LinearLayout>
 
-</GridLayout>
+</RelativeLayout>
